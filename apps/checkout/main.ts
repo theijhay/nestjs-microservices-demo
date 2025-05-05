@@ -1,13 +1,13 @@
 import { NestFactory } from '@nestjs/core';
-import { AmbassadorModule } from './ambassador.module';
+import { CheckoutModule } from './checkout.module';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { createKafkaConfig } from '@libs/kafka.config';
 
 async function bootstrap() {
-  const kafkaOptions = createKafkaConfig('ambassador-service', 'ambassador-consumer-group');
+  const kafkaOptions = createKafkaConfig('checkout-service', 'checkout-consumer-group');
 
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
-    AmbassadorModule,
+    CheckoutModule,
     {
       transport: Transport.KAFKA,
       options: kafkaOptions,
@@ -15,6 +15,6 @@ async function bootstrap() {
   );
 
   await app.listen();
-  console.log('🚀 Ambassador Microservice is running and listening for Kafka events...');
+  console.log('🚀 Checkout Microservice is running and listening for Kafka events...');
 }
 bootstrap();
