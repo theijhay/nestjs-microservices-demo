@@ -27,7 +27,11 @@
     "start:email": "ts-node -r tsconfig-paths/register apps/email/main.ts",
     "dev:docker": "docker-compose up --build",
     "down:docker": "docker-compose down -v",
-    "logs:docker": "docker-compose logs -f --tail=100"
+    "logs:docker": "docker-compose logs -f --tail=100",
+    "start:user":  "ts-node -r tsconfig-paths/register apps/user/main.ts",
+    "start:admin": "ts-node -r tsconfig-paths/register apps/admin/main.ts",
+    "start:ambassador": "nest start --watch apps/ambassador",
+    "start:checkout": "nest start --watch apps/checkout"
   },
   "dependencies": {
     "@eslint/eslintrc": "^3.3.1",
