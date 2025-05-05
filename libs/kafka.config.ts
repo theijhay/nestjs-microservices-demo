@@ -1,14 +1,14 @@
-import { KafkaOptions, Transport } from '@nestjs/microservices';
+import { KafkaOptions } from '@nestjs/microservices';
 import * as dotenv from 'dotenv';
 
 dotenv.config();
 
-export const kafkaConfig: KafkaOptions['options'] = {
+export const createKafkaConfig = (clientId: string, groupId: string): KafkaOptions['options'] => ({
   client: {
     brokers: [process.env.KAFKA_BROKER || 'localhost:9092'],
-    clientId: 'email-service',
+    clientId,
   },
   consumer: {
-    groupId: 'email-consumer-group',
+    groupId,
   },
-};
+});
