@@ -1,12 +1,13 @@
 import { NestFactory } from '@nestjs/core';
-import { EmailModule } from './email.module';
+import { UserModule } from './user.module';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
-import { createKafkaConfig} from '@libs/kafka.config';
+import { createKafkaConfig } from '@libs/kafka.config';
 
 async function bootstrap() {
-  const kafkaOptions = createKafkaConfig('email-service', 'email-consumer-group');
+  const kafkaOptions = createKafkaConfig('user-service', 'user-consumer-group');
+
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
-    EmailModule,
+    UserModule,
     {
       transport: Transport.KAFKA,
       options: kafkaOptions,
@@ -14,6 +15,6 @@ async function bootstrap() {
   );
 
   await app.listen();
-  console.log('📨 Email Microservice is running and listening for Kafka events...');
+  console.log('🚀 User Microservice is running and listening for Kafka events...');
 }
 bootstrap();
