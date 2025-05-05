@@ -31,7 +31,7 @@
     "start:user":  "ts-node -r tsconfig-paths/register apps/user/main.ts",
     "start:admin": "ts-node -r tsconfig-paths/register apps/admin/main.ts",
     "start:ambassador": "ts-node -r tsconfig-paths/register apps/ambassador/main.ts",
-    "start:checkout": "nest start --watch apps/checkout"
+    "start:checkout": "ts-node -r tsconfig-paths/register apps/checkout/main.ts"
   },
   "dependencies": {
     "@eslint/eslintrc": "^3.3.1",

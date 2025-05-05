@@ -6,7 +6,7 @@ export class AdminService {
   private readonly logger = new Logger(AdminService.name);
 
   create(dto: CreateAdminDto) {
-    // Simulate user creation logic
+    // Simulate Admin creation logic
     this.logger.log(`✅ Admin created: ${JSON.stringify(dto)}`);
   }
 }
