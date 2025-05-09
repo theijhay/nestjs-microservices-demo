@@ -6,7 +6,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "ES2021",
+    "target": "ESNext",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
@@ -19,7 +19,8 @@
     "noFallthroughCasesInSwitch": false,
     "paths": {
       "@libs/*": ["libs/*"],
-      "@libs/dto": ["libs/dto"]
+      "@libs/dto": ["libs/dto"],
+      "lib": ["ESNext"]
     }
   }
 }

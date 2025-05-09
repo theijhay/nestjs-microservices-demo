@@ -17,7 +17,7 @@ export class KafkaProducerService implements OnModuleInit, OnModuleDestroy {
 
   async onModuleInit() {
     await this.producer.connect();
-    console.log('✅ Kafka Producer connected');
+    console.log('Kafka Producer connected');
   }
 
   async onModuleDestroy() {
@@ -30,6 +30,6 @@ export class KafkaProducerService implements OnModuleInit, OnModuleDestroy {
       messages: [{ value: JSON.stringify(payload) }],
     });
 
-    console.log(`📤 Kafka event emitted on topic "${topic}"`);
+    console.log(`Kafka event emitted on topic "${topic}"`);
   }
 }
